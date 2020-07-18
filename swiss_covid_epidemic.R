@@ -105,12 +105,12 @@ free <- c(seed = log(25), # Time at which model is initialized
           R_0 = log(2.5), # Basic reproduction number
           kappa = qlogis(0.25), # Relative transmission after implementation of NPIs
           epsilon3 = qlogis(0.25)) # Probability of death in hospital bed
-#fit <- mle2(nll, start = as.list(free), fixed = as.list(fixed), method = "Nelder-Mead")
-#fit_ci <- confint(fit)
+fit <- mle2(nll, start = as.list(free), fixed = as.list(fixed), method = "Nelder-Mead")
+fit_ci <- confint(fit)
 #saveRDS(fit, "fit.rds")
 #saveRDS(fit_ci, "fit_ci.rds")
-fit <- readRDS("fit.rds")
-fit_ci <- readRDS("fit_ci.rds")
+#fit <- readRDS("fit.rds")
+#fit_ci <- readRDS("fit_ci.rds")
 
 # Calculate bootstrap compatibility intervals
 n_sim <- 1e4
@@ -124,12 +124,12 @@ sim_coef$epsilon3 <- plogis(sim_coef$epsilon3)
 
 est_seed <- c(trans(coef(fit))["seed"], exp(fit_ci[1, ]))
 est_R_0 <- c(trans(coef(fit))["R_0"], exp(fit_ci[2, ]))
-est_kappa <- c(trans(coef(fit))["kappa"], plogis(fit_ci[3, ]))
+est_epsilon3 <- c(trans(coef(fit))["epsilon3"], plogis(fit_ci[3, ]))
+est_kappa <- c(trans(coef(fit))["kappa"], plogis(fit_ci[4, ]))
 est_R_e <- c(trans(coef(fit))["R_0"]*trans(coef(fit))["kappa"], quantile(sim_coef$R_0*sim_coef$kappa, probs = c(0.025, 0.975)))
 names(est_R_e)[1] <- "R_e" 
 est_epsilon1 <- c(fixed[["epsilon1"]]/(fixed[["epsilon2"]]*fixed[["epsilon4"]] + (1 - fixed[["epsilon2"]])*trans(coef(fit))[["epsilon3"]]),
                   quantile(fixed[["epsilon1"]]/(fixed[["epsilon2"]]*fixed[["epsilon4"]] + (1 - fixed[["epsilon2"]])*sim_coef$epsilon3), probs = c(0.025, 0.975)))
-est_epsilon3 <- c(trans(coef(fit))["epsilon3"], plogis(fit_ci[4, ]))
 
 est_seed
 est_R_0
