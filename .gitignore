@@ -46,7 +46,6 @@ po/*~
 
 # packrat files not needed in repo
 packrat/lib*/
-packrat/src/
 
 # artifacts
 Rplots.pdf
