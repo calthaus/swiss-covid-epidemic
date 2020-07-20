@@ -1,0 +1,66 @@
+PackratFormat: 1.4
+PackratVersion: 0.5.0
+RVersion: 4.0.2
+Repos: CRAN=https://cloud.r-project.org
+
+Package: RColorBrewer
+Source: CRAN
+Version: 1.1-2
+Hash: c0d56cd15034f395874c870141870c25
+
+Package: Rcpp
+Source: CRAN
+Version: 1.0.5
+Hash: f6e400231df42179d6ce8fb35e52bf3f
+
+Package: bbmle
+Source: CRAN
+Version: 1.0.23.1
+Hash: 69386026ab577bcf76cc6e12ac6133e4
+Requires: bdsmatrix, mvtnorm, numDeriv
+
+Package: bdsmatrix
+Source: CRAN
+Version: 1.3-4
+Hash: bd9216f9d243c7e83f29023c3da4f7da
+
+Package: deSolve
+Source: CRAN
+Version: 1.28
+Hash: 1977e00bec3443aa79c1adf74cd4bb54
+
+Package: generics
+Source: CRAN
+Version: 0.0.2
+Hash: 4aaf002dd434e8c854611c5d11a1d58e
+
+Package: lubridate
+Source: CRAN
+Version: 1.7.9
+Hash: 132a6c810430a06c9d5e1ffaa497db3c
+Requires: Rcpp, generics
+
+Package: mvtnorm
+Source: CRAN
+Version: 1.1-1
+Hash: 6e13acde49757399332c2950318c78dc
+
+Package: numDeriv
+Source: CRAN
+Version: 2016.8-1.1
+Hash: 4655a089f4d8b80268adaf83d6cd5fb2
+
+Package: packrat
+Source: CRAN
+Version: 0.5.0
+Hash: 498643e765d1442ba7b1160a1df3abf9
+
+Package: skellam
+Source: CRAN
+Version: 0.2.0
+Hash: 2e3249a6551f8a30307340621beb0a44
+
+Package: xtable
+Source: CRAN
+Version: 1.8-4
+Hash: dc0d47261b678d26032363bebd050540
