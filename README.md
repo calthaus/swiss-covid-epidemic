@@ -6,7 +6,7 @@ This repository contains data and `R` code files from the following publications
 	* swiss_covid_epidemic_CH.R
 	* swiss_covid_epidemic_CH.csv
   
-2. Emmenegger et al. (2020) [Early plateau of SARS-CoV-2 seroprevalence identified by tripartite immunoassay in a large population of the greater area of Zurich, Switzerland]().
+2. Emmenegger M, et al. (2020) [Early plateau of SARS-CoV-2 seroprevalence identified by tripartite immunoassay in a large population of the greater area of Zurich, Switzerland]().
 	* swiss_covid_epidemic_ZH.R
 	* swiss_covid_epidemic_ZH.csv
 
